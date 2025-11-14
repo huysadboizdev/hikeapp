@@ -1,51 +1,61 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="20dp"
+<!-- File: res/layout/activity_main.xml -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#2A91F8">
 
-    <TextView
-        android:text="🏔️ Hike Management App"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="24dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/btnAddHike"
-        android:text="➕ Add New Hike"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/btnViewHikes"
-        android:text="📋 View All Hikes"
-        android:layout_width="match_parent"
+    <!-- centered card container (not full width) -->
+    <LinearLayout
+        android:id="@+id/card"
+        android:orientation="vertical"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp" />
+        android:layout_gravity="center"
+        android:padding="20dp"
+        android:background="@drawable/button_bg_outline"
+        android:elevation="6dp">
 
-    <Button
-        android:id="@+id/btnAddObservation"
-        android:text="📝 Add Observation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp" />
+        <TextView
+            android:id="@+id/tvTitle"
+            android:text="️ Hike Management App"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="18dp"
+            android:textColor="#222"/>
 
-    <Button
-        android:id="@+id/btnSearch"
-        android:text="🔍 Search Hike"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp" />
+        <Button
+            android:id="@+id/btnAddHike"
+            style="@style/HikeButton"
+            android:text=" Add New Hike"/>
 
-    <Button
-        android:id="@+id/btnReset"
-        android:text="🗑️ Reset Database"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textColor="@android:color/holo_red_dark" />
+        <Button
+            android:id="@+id/btnViewHikes"
+            style="@style/HikeButton"
+            android:text=" View All Hikes"
+            android:layout_marginTop="10dp"/>
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btnAddObservation"
+            style="@style/HikeButton"
+            android:text=" Add Observation"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/btnSearch"
+            style="@style/HikeButton"
+            android:text=" Search Hike"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/btnReset"
+            style="@style/HikeButton"
+            android:text=" Reset Database"
+            android:layout_marginTop="12dp"
+            android:textColor="#F0EFEF"
+            android:background="@drawable/button_bg_outline"/>
+
+    </LinearLayout>
+</FrameLayout>

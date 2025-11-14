@@ -1,0 +1,15 @@
+<!-- File: res/drawable/button_bg.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#2E7DFF"/>
+            <corners android:radius="8dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#3F51B5"/>
+            <corners android:radius="8dp"/>
+        </shape>
+    </item>
+</selector>

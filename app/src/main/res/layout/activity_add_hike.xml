@@ -1,80 +1,220 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#F2F6F9"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
+    <!-- Centered card with fixed max width so it doesn't stretch full screen -->
     <LinearLayout
+        android:id="@+id/card_container"
         android:orientation="vertical"
+        android:layout_gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:padding="0dp">
 
-        <EditText
-            android:id="@+id/etName"
-            android:hint="Name of hike"
-            android:inputType="textPersonName"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
 
-        <EditText
-            android:id="@+id/etLocation"
-            android:hint="Location"
-            android:inputType="text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_bg"
+                android:padding="18dp">
 
-        <EditText
-            android:id="@+id/etDate"
-            android:hint="Date (dd/MM/yyyy)"
-            android:inputType="date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add / Edit Hike"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp"
+                    android:textColor="#222" />
 
-        <Spinner
-            android:id="@+id/spParking"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                <!-- Name -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Name (required)"
+                    android:textSize="13sp"
+                    android:layout_marginTop="6dp"/>
+                <EditText
+                    android:id="@+id/etName"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:hint="e.g. Snowdon"
+                    android:inputType="textCapWords"
+                    android:padding="10dp"
+                    android:background="@drawable/input_bg"/>
 
-        <EditText
-            android:id="@+id/etLength"
-            android:hint="Length (km)"
-            android:inputType="numberDecimal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                <!-- Location -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Location (required)"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"/>
+                <EditText
+                    android:id="@+id/etLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:hint="e.g. Trosley Country Park"
+                    android:inputType="textCapWords"
+                    android:padding="10dp"
+                    android:background="@drawable/input_bg"/>
 
-        <Spinner
-            android:id="@+id/spDifficulty"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                <!-- Date + pick button in one row -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Date (required)"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/etDescription"
-            android:hint="Description (optional)"
-            android:inputType="textMultiLine"
-            android:minLines="3"
-            android:gravity="top"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/tvDate"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="44dp"
+                        android:gravity="center_vertical"
+                        android:paddingStart="10dp"
+                        android:text="Select date"
+                        android:background="@drawable/input_bg" />
 
-        <!-- Custom fields -->
-        <EditText
-            android:id="@+id/etWeather"
-            android:hint="Expected weather (optional)"
-            android:inputType="text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                    <Button
+                        android:id="@+id/btnPickDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:text="Pick"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
 
-        <EditText
-            android:id="@+id/etGroupSize"
-            android:hint="Group size (optional)"
-            android:inputType="number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                <!-- Parking (switch) -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Parking available (required)"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"/>
+                <Switch
+                    android:id="@+id/swParking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Parking: Yes / No"
+                    android:layout_marginTop="4dp"/>
 
-        <Button
-            android:id="@+id/btnSave"
-            android:text="Save Hike"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                <!-- Length -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Length (km) (required)"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"/>
+                <EditText
+                    android:id="@+id/etLength"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:hint="e.g. 8.5"
+                    android:inputType="numberDecimal"
+                    android:padding="10dp"
+                    android:background="@drawable/input_bg"/>
 
+                <!-- Difficulty (spinner) -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Difficulty (required)"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"/>
+                <Spinner
+                    android:id="@+id/spDifficulty"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@drawable/input_bg"
+                    android:padding="8dp"/>
+
+                <!-- Description -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Description (optional)"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"/>
+                <EditText
+                    android:id="@+id/etDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minLines="3"
+                    android:gravity="top"
+                    android:hint="Notes about the route"
+                    android:inputType="textMultiLine"
+                    android:padding="10dp"
+                    android:background="@drawable/input_bg"/>
+
+                <!-- Custom fields -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Expected weather (optional)"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"/>
+                <EditText
+                    android:id="@+id/etWeather"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:hint="e.g. Sunny"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:background="@drawable/input_bg"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Group size (optional)"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"/>
+                <EditText
+                    android:id="@+id/etGroupSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:hint="e.g. 4"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:background="@drawable/input_bg"/>
+
+                <!-- Buttons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp"
+                    android:gravity="end">
+
+                    <Button
+                        android:id="@+id/btnCancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:text="Cancel" />
+
+                    <Button
+                        android:id="@+id/btnSave"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:text="Save"
+                        android:layout_marginStart="10dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
-</ScrollView>
+</FrameLayout>

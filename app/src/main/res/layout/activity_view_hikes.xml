@@ -1,11 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- File: res/layout/activity_view_hikes.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:padding="12dp"
+    android:background="#5FA8DE"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvHeader"
+        android:text="🏔️ All Hikes"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#222"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="6dp"
+        android:padding="8dp" />
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:dividerHeight="10dp"
+        android:divider="@android:color/transparent"
+        android:listSelector="@android:color/darker_gray"
+        android:clipToPadding="false"
+        android:padding="4dp"
+        android:background="#FFFFFF"
+        android:elevation="2dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="4dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="➕ Add New Hike"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF"
+            android:layout_marginEnd="6dp" />
+
+        <Button
+            android:id="@+id/btnDeleteAll"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="🗑️ Delete All"
+            android:backgroundTint="#F44336"
+            android:textColor="#FFFFFF"
+            android:layout_marginEnd="6dp" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="⬅️ Back"
+            android:backgroundTint="#9E9E9E"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
 </LinearLayout>

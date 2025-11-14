@@ -1,31 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:padding="20dp"
+    android:gravity="center_horizontal"
+    android:background="#59C74D"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:text="Search Hike"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#2E3A59"
+        android:layout_marginBottom="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <EditText
         android:id="@+id/etQuery"
-        android:hint="Enter hike name or part of name"
+        android:hint="Enter hike name..."
+        android:background="@android:drawable/edit_text"
+        android:padding="10dp"
+        android:textSize="16sp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp" />
 
     <Button
         android:id="@+id/btnSearch"
         android:text="Search"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#2196F3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp" /> <Button
+    android:id="@+id/btnBack"
+    android:text="Back to Main"
+    android:textColor="#FFFFFF"
+    android:backgroundTint="#757575"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp" /> <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:background="#FFFFFF"
+    android:padding="10dp"
+    android:elevation="2dp"
+    android:clipToPadding="false">
 
-    <ScrollView
+    <TextView
+        android:id="@+id/tvResult"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
-
-        <TextView
-            android:id="@+id/tvResult"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:padding="8dp" />
-    </ScrollView>
+        android:layout_height="wrap_content"
+        android:textColor="#333333"
+        android:textSize="15sp" />
+</ScrollView>
 </LinearLayout>

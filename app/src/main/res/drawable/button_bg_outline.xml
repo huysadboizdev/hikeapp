@@ -1,0 +1,17 @@
+<!-- File: res/drawable/button_bg_outline.xml (for Reset button) -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFEBEE"/>
+            <corners android:radius="8dp"/>
+            <stroke android:width="1dp" android:color="#B00020"/>
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF"/>
+            <corners android:radius="8dp"/>
+            <stroke android:width="1dp" android:color="#E0E0E0"/>
+        </shape>
+    </item>
+</selector>
